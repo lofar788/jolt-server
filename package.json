@@ -1,0 +1,25 @@
+{
+  "name": "jolt-server",
+  "version": "1.0.0",
+  "description": "backend node server for video",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lofar788/jolt-server.git"
+  },
+  "keywords": [
+    "server"
+  ],
+  "author": "ian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lofar788/jolt-server/issues"
+  },
+  "homepage": "https://github.com/lofar788/jolt-server#readme",
+  "dependencies": {
+    "node-media-server": "^2.1.2"
+  }
+}
