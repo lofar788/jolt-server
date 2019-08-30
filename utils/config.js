@@ -11,5 +11,5 @@ const config = {
       allow_origin: '*'
     }
   };
-
+ 
   module.exports = config;

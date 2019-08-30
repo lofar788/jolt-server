@@ -1,25 +1,25 @@
 {
   "name": "jolt-server",
   "version": "1.0.0",
-  "description": "backend node server for video",
-  "main": "main.js",
+  "description": "backend server",
+  "main": "index.js",
   "scripts": {
-    "test": "node main.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js",
+    "deploy": "gcloud app deploy"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lofar788/jolt-server.git"
   },
-  "keywords": [
-    "server"
-  ],
   "author": "ian",
   "license": "ISC",
+  "dependencies": {
+    "@google-cloud/debug-agent": "^4.0.3",
+    "node-media-server": "2.1.2"
+  },
   "bugs": {
     "url": "https://github.com/lofar788/jolt-server/issues"
   },
-  "homepage": "https://github.com/lofar788/jolt-server#readme",
-  "dependencies": {
-    "node-media-server": "^2.1.2"
-  }
+  "homepage": "https://github.com/lofar788/jolt-server#readme"
 }
