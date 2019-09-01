@@ -18,11 +18,11 @@ const config = {
     },
     http: {
       port: 8000,
-      mediaroot: '\\media',
+      mediaroot: '/media',
       allow_origin: '*'
     },
     trans: {
-      ffmpeg: 'ffmpeg-4.1.3-win64-static\\bin\\ffmpeg.exe',
+      ffmpeg: 'ffmpeg-4.1.3-win64-static/bin/ffmpeg.exe',
       tasks: [
         {
           app: 'live',
