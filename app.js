@@ -1,5 +1,5 @@
 const node_server = require('node-media-server')
-const config = require('./utils/config')
+const config = require('./utils/config').rtmp_server
 
 require('@google-cloud/debug-agent').start();
 
