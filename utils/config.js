@@ -5,11 +5,19 @@ const config = {
   logType: 0,
   
   rtmp_server: {
+<<<<<<< HEAD
 auth:{
 api:true,
 api_user:'admin',
 api_pass:'nms2018
 }
+=======
+    auth: {
+      api : true,
+      api_user: 'admin',
+      api_pass: 'nms2018',
+    },
+>>>>>>> 92904bb663afa007f88aea24dedcacc5af73d9f6
     rtmp: {
       port: 1935,
       chunk_size: 60000,
@@ -23,7 +31,8 @@ api_pass:'nms2018
       allow_origin: '*'
     },
     trans: {
-      ffmpeg: '/usr/bin/ffmpeg',
+      // ffmpeg: '/usr/bin/ffmpeg',
+      ffmpeg:'ffmpeg-4.1.3-win64-static\\bin\\ffmpeg.exe',
       tasks: [
         {
           app: 'live',
