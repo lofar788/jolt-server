@@ -24,8 +24,8 @@ const config = {
       allow_origin: '*'
     },
     trans: {
-      // ffmpeg: '/usr/bin/ffmpeg',
-      ffmpeg:'ffmpeg-4.1.3-win64-static\\bin\\ffmpeg.exe',
+      ffmpeg: '/usr/bin/ffmpeg',
+      // ffmpeg:'ffmpeg-4.1.3-win64-static\\bin\\ffmpeg.exe',
       tasks: [
         {
           app: 'live',
