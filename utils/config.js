@@ -5,19 +5,12 @@ const config = {
   logType: 0,
   
   rtmp_server: {
-<<<<<<< HEAD
-auth:{
-api:true,
-api_user:'admin',
-api_pass:'nms2018
-}
-=======
+
     auth: {
       api : true,
       api_user: 'admin',
       api_pass: 'nms2018',
     },
->>>>>>> 92904bb663afa007f88aea24dedcacc5af73d9f6
     rtmp: {
       port: 1935,
       chunk_size: 60000,
