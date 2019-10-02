@@ -6,11 +6,11 @@ const config = {
 
   rtmp_server: {
 
-    // auth: {
-    //   api : true,
-    //   api_user: 'admin',
-    //   api_pass: 'nms2018',
-    // },
+    auth: {
+      api : true,
+      api_user: 'admin',
+      api_pass: 'nms2018',
+    },
     rtmp: {
       port: 1935,
       chunk_size: 60000,

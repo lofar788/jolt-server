@@ -3,14 +3,6 @@ var https = require('https');
 var fs = require('fs');
 var PORT = 443;
 
-var options = {
-  key: fs.readFileSync('XYZ.key'),
-  cert: fs.readFileSync('ABC.crt')
-};
-
-var server = https.createServer(options, app).listen(PORT, function () {
-  console.log("Express listening on port " + PORT);
-});
 
 // Post request.
 var req_res = function (req, res) {
@@ -38,11 +30,6 @@ var req_res = function (req, res) {
     }));
   });
 };
-
-// Hello World
-app.get('/*', function (req, res) {
-  res.status(200).send('Hello World...');
-});
 
 // Post request to receive notifications.
 app.post('/post', req_res);

@@ -17,10 +17,12 @@ setInterval(function () {
 			let data = doc.data()
 			let streamKey = data['streamKey']
 			// axios.get('http://localhost:8000/api/streams/live/' + streamKey)
-			axios.get('http://localhost:8000/api/streams/live/' + streamKey, {}, {
+			// axios.get('http://localhost:8000/api/streams/live/' + streamKey, {}, {
+				
+			axios.get('http://34.68.42.134:8000/api/streams/live/' + streamKey, {}, {
 				username: 'admin',
 				password: 'nms2018'
-			}).then(function (response) {
+			}).then( (response) =>{
 				db.collection('users').doc(doc.id).update({viewers:response.data.viewers})
 				// doc.data().update({viewers:response.data.viewers})
 			}).catch(err => {
