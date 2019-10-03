@@ -9,7 +9,7 @@ const config = {
     auth: {
       api : true,
       api_user: 'admin',
-      api_pass: 'nms2018',
+      api_pass: 'password',
     },
     rtmp: {
       port: 1935,

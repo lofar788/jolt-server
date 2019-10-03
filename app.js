@@ -3,11 +3,15 @@ const config = require('./utils/config')
 const express = require('express')
 const app = express()
 const axios = require('axios')
+const cors = require('cors')
 const { db } = require('./utils/firebase-config')
 
 app.get('/', (req, res) => {
 	return (res.json({ message: 'ey' }))
 })
+
+
+const nms = new node_server(config.rtmp_server)
 
 var minutes = 5, the_interval = minutes * 60 * 10;
 setInterval(function () {
@@ -17,16 +21,19 @@ setInterval(function () {
 			let data = doc.data()
 			let streamKey = data['streamKey']
 			// axios.get('http://localhost:8000/api/streams/live/' + streamKey)
-			// axios.get('http://localhost:8000/api/streams/live/' + streamKey, {}, {
 				
-			axios.get('http://34.68.42.134:8000/api/streams/live/' + streamKey, {}, {
+			axios.get('http://34.68.42.134:8000/api/streams/live/' + streamKey, {
+				
+			// axios.get('http://localhost:8000/api/streams/live/' + streamKey, {
+				auth:{
 				username: 'admin',
-				password: 'nms2018'
-			}).then( (response) =>{
+				password: 'password'
+				}
+			}).then((response) =>{
 				db.collection('users').doc(doc.id).update({viewers:response.data.viewers})
 				// doc.data().update({viewers:response.data.viewers})
 			}).catch(err => {
-				console.log(err)
+				console.log(err.response)
 			})
 			// doc.data().update({viewers})
 		})
@@ -35,7 +42,6 @@ setInterval(function () {
 	})
 }, the_interval);
 
-const nms = new node_server(config.rtmp_server)
 
 nms.on('prePublish', async (id, StreamPath, args) => {
 	let stream_key = getStreamKeyFromStreamPath(StreamPath);
