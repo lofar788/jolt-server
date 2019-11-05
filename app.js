@@ -1,5 +1,5 @@
-// const node_server = require('node-media-server')
-const node_server = require('./Node-Media-Server-master')
+const node_server = require('node-media-server')
+// const node_server = require('./Node-Media-Server-master')
 const config = require('./utils/config')
 const express = require('express')
 const app = express()
