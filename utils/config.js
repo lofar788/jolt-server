@@ -20,9 +20,14 @@ const config = {
     },
     http: {
       port: 8000,
-      mediaroot: 'media',
+      // mediaroot: 'media',
       mediaroot: './media',
       allow_origin: '*'
+    },
+    https: {
+      port: 8443,
+      key:'./privatekey.pem',
+      cert:'./certificate.pem',
     },
     trans: {
       // for server
