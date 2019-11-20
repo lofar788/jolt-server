@@ -26,8 +26,8 @@ const config = {
     },
     https: {
       port: 8443,
-      key:'/etc/letsencrypt/live/cdn.nodemedia.cn/privkey.pem',
-      cert:'/etc/letsencrypt/live/cdn.nodemedia.cn/fullchain.pem',
+      key:'./etc/letsencrypt/live/useast.joltcast.org/privkey.pem',
+      cert:'./etc/letsencrypt/live/useast.joltcast.org/fullchain.pem',
     },
     trans: {
       // for server
