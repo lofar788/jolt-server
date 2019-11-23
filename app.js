@@ -48,19 +48,18 @@ setInterval(function () {
 nms.on('prePublish', async (id, StreamPath, args) => {
 	let stream_key = getStreamKeyFromStreamPath(StreamPath);
 	const session = nms.getSession(id)
+	console.log(id,'rrrrrrrrrrrrr')
 	// const path = session['publishStreamPath']
 	const newKey = StreamPath.split('/')
 	newKey[newKey.length-1] = md5(stream_key + 'password')
 	session['publishStreamPath'] = newKey.join('/')
 	db.collection('users').where('streamKey', '==', stream_key).limit(1).get().then((querySnapshot) => {
-		
-		
 		if (querySnapshot.empty) {
 			let session = nms.getSession(id);
 			session.reject();
 		} else {
 			querySnapshot.forEach(doc => {
-				db.collection('users').doc(doc.id).update({ isLive: true })
+				db.collection('users').doc(doc.id).update({ isLive: true, streamId:id })
 			})
 		}
 	}).catch(err => {
@@ -70,9 +69,11 @@ nms.on('prePublish', async (id, StreamPath, args) => {
 });
 
 nms.on('donePublish', (id, StreamPath, args) => {
+
 	console.log('[NodeEvent on donePublish]', `id=${id} StreamPath=${StreamPath} args=${JSON.stringify(args)}`);
 	let stream_key = getStreamKeyFromStreamPath(StreamPath);
-	db.collection('users').where('streamKey', '==', stream_key).limit(1).get().then((querySnapshot) => {
+	console.log(id,'7777777777')
+	db.collection('users').where('streamId', '==', id).limit(1).get().then((querySnapshot) => {
 		querySnapshot.forEach(doc => {
 			db.collection('users').doc(doc.id).update({ isLive: false })
 		})
